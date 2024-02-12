@@ -1,0 +1,73 @@
+from PyQt5.QtWidgets import QApplication, QLineEdit, QWidget, QLabel, QWidget, QVBoxLayout, QHBoxLayout, QPushButton
+from PyQt5.QtCore import Qt, QTimer, QTime
+from random import randint
+
+app=QApplication([])
+class TestWin(QWidget):
+    def __init__(self):
+        self.wind=QWidget()
+    def sozd(self):
+        wind.move(100, 100)
+        wind.resize(1000, 1000)
+    def vidjets(self):
+        self.vline=QVBoxLayout()
+
+        txt_name=QLabel('Введите ФИО:')
+        fiookno=QLineEdit()
+
+        txt_let=QLabel('Полных лет:')
+        letokno=QLineEdit()
+
+        txt_instrtime=QLabel('Лягте на спину, смотрите на таймер и впишите результат сколько твы протянули без женщины или аниме тянки в окно')
+        instrtimebutvkl=QPushButton('Начать')
+        instrtimebutvblkl=QPushButton('Выключить')
+        instrtimeokno=QLineEdit()
+        
+
+        txt_creatin=QLabel('Cколько креатина вы потребляете в')
+        txt_pon=QLabel('понедельник')
+        days=['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресение']
+        daysbut=QPushButton('Ввести')
+        nday=0
+
+        txt_brats=QLabel('Сколько у тебя братьев:')
+        bratsokno=QLineEdit()
+
+        self.vline.addWidget(txt_name)
+        self.vline.addWidget(fiookno)
+        self.vline.addWidget(txt_let)
+        self.vline.addWidget(letokno)
+        self.vline.addWidget(txt_instrtime)
+        self.vline.addWidget(instrtimebutvkl)
+        self.vline.addWidget(instrtimebutvkl)
+        self.vline.addWidget(instrtimebutvkl)
+        self.vline.addWidget(instrtimebutvkl)
+        self.vline.addWidget(instrtimebutvkl)
+
+
+    def creat(self):
+        daysbut.cliked.connects(creat())
+        global nday
+        nday+=1
+
+        txt_pon.setText(days[nday])
+
+    def timer(self):
+        instrtimebutvkl.cliked.connects(timer1())
+        instrtimebutvbblkl.cliked.connects(timer2())
+
+    def timer1(self):
+        self.timer=QTimer()
+        self.timer.timeout.connect(self.timer1Events)
+        self.timer.start(1000)
+        time=QTime(0,0,0)
+
+    def timer1Event(self):
+        time.addSecs(+1)
+        time.toString("hh:mm:ss")
+
+    def timer2(self):
+        self.timer.stop()
+
+wind.show()
+app.exec_()
